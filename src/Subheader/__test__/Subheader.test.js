@@ -1,27 +1,16 @@
 import 'react-native';
 import React from 'react';
-import ThemeProvider from '../../styles/ThemeProvider.react';
-import Subheader from '../index';
-import Container from '../../Container';
-
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
+import Subheader from '../index';
 
 it('default props', () => {
-    const subheader = renderer.create(
-        <ThemeProvider>
-            <Subheader text="Test" />
-        </ThemeProvider>
-    ).toJSON();
+  const subheader = renderer.create(<Subheader text="Test" />).toJSON();
 
-    expect(subheader).toMatchSnapshot();
+  expect(subheader).toMatchSnapshot();
 });
 it('with inset', () => {
-    const subheader = renderer.create(
-        <ThemeProvider>
-            <Subheader text="Test" inset={true} />
-        </ThemeProvider>
-    ).toJSON();
+  const subheader = renderer.create(<Subheader text="Test" inset />).toJSON();
 
-    expect(subheader).toMatchSnapshot();
+  expect(subheader).toMatchSnapshot();
 });
